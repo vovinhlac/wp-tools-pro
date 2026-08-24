@@ -1,41 +1,38 @@
 # WP Tools Pro
 
-A production-focused modular WordPress plugin for administration, technical SEO, performance, security, privacy, media, redirects, SMTP diagnostics, permissions, and operational QA.
+A modular WordPress engineering project focused on technical SEO, performance, security, redirects, resilient background processing, database diagnostics, webhook verification, and upgrade recovery.
 
-> This public repository is a portfolio-focused engineering snapshot. Production credentials, runtime data, backups, and site-specific configuration are intentionally excluded.
+> This repository is a focused public snapshot for code review, not the full production distribution package. Production credentials, runtime data, backups, private provider configuration, and site-specific modules are intentionally excluded.
 
-## What I built
+## Engineering examples in this snapshot
 
-I designed the requirements and modular architecture, implemented and iterated the WordPress/PHP codebase, and handled testing, debugging, security/performance priorities, and release validation.
-
-## Highlights
-
-- Modular WordPress architecture with separate Core, Admin, and Module layers
-- Redirect/404 tooling, spam firewall, consent tooling, media optimization, SMTP diagnostics, and role management
-- Persistent queue processing with locking, retries, stale-job recovery, and failure visibility
-- Security-focused webhook verification and privacy-aware diagnostics
-- Multisite compatibility, migrations, and upgrade-recovery tooling
-- PHPUnit, PHPCS/WPCS, and GitHub Actions configuration
+- Small module registry with independently bootable Security, Performance, SEO, and Redirect modules
+- Safe redirect handling with loop protection plus privacy-aware 404 logging
+- Persistent background queue with atomic claiming, retry backoff, stale-lock recovery, and Action Scheduler/WP-Cron fallback
+- Indexed WordPress database tables and index/query diagnostics
+- Native webhook-signature verification patterns with timestamp/replay protection
+- Migration snapshots and rollback-oriented upgrade recovery
+- WordPress Coding Standards / PHP compatibility configuration
+- GitHub Actions PHP 8.0, 8.2, and 8.4 syntax-quality matrix
 
 ## Tech stack
 
-PHP 8+ · WordPress · JavaScript · CSS · PHPUnit · PHPCS/WPCS · GitHub Actions
+PHP 8+ · WordPress · MySQL · JavaScript/CSS integration · PHPCS/WPCS · GitHub Actions
 
-## Quality and security
+## Security and reliability
 
-The codebase applies capability checks, nonces, validation, sanitization, and escaping around privileged or user-controlled operations. The release workflow also includes integration tests, compatibility checks, migration/rollback logic, and CI configuration.
+The public code demonstrates WordPress capability/nonce patterns where relevant, validation and sanitization, safe redirect validation, hashed diagnostic identifiers, database locking, bounded retries, replay protection, and migration recovery.
 
-## Local development
+## Local code-quality check
 
 ```bash
 composer install
 composer lint
-composer test
 ```
 
-## My role
+## My contribution
 
-I owned the project requirements, architecture decisions, WordPress integration, iterative implementation, QA/debugging, and release priorities for this portfolio project.
+I owned the project requirements and architecture direction, selected the WordPress integration and reliability priorities, iterated the implementation, and handled debugging, QA, and release decisions for this portfolio project.
 
 ## License
 
