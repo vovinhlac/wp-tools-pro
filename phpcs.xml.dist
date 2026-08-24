@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <ruleset name="WP Tools Pro">
-    <description>WordPress Coding Standards and PHP compatibility rules for WP Tools Pro.</description>
+    <description>WordPress Coding Standards and PHP compatibility rules for the public snapshot.</description>
     <file>wp-tools-pro.php</file>
     <file>src</file>
-    <file>tests</file>
     <exclude-pattern>vendor/*</exclude-pattern>
     <arg name="basepath" value="."/>
     <arg name="colors"/>
