@@ -1,0 +1,28 @@
+{
+  "name": "lacvo/wp-tools-pro",
+  "description": "Production-focused modular WordPress tools suite.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {"name": "Vo Vinh Lac", "homepage": "https://vovinhlac.com/"}
+  ],
+  "require": {
+    "php": ">=8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6 || ^10.5 || ^11.0",
+    "squizlabs/php_codesniffer": "^3.10",
+    "wp-coding-standards/wpcs": "^3.1",
+    "phpcompatibility/php-compatibility": "^9.3"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "scripts": {
+    "test": "phpunit -c phpunit.xml.dist",
+    "lint": "phpcs -q",
+    "qa": ["@lint", "@test"]
+  }
+}
