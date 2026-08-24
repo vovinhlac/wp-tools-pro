@@ -1,0 +1,22 @@
+name: Portfolio QA
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  php-quality:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.0', '8.2', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+      - name: Validate Composer metadata
+        run: composer validate --strict --no-check-lock
+      - name: PHP syntax check
+        run: find . -type f -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l
