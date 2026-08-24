@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a reproducible defect in the public WordPress/PHP snapshot
+title: "[Bug]: "
+labels: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What happened and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      placeholder: "1. ...\n2. ...\n3. ..."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: WordPress, PHP, WooCommerce and browser versions when relevant.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or evidence
+      description: Remove credentials, personal data and production secrets before pasting anything.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, customer data and private production information.
+          required: true
