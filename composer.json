@@ -11,17 +11,29 @@
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "phpunit/phpunit": "^9.6",
     "squizlabs/php_codesniffer": "^3.10",
-    "wp-coding-standards/wpcs": "^3.1",
-    "phpcompatibility/phpcompatibility-wp": "^2.1"
+    "wp-coding-standards/wpcs": "^3.1"
   },
   "config": {
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
+  "autoload": {
+    "psr-4": {
+      "LacVo\\WPToolsPro\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LacVo\\WPToolsPro\\Tests\\": "tests/Unit/"
+    }
+  },
   "scripts": {
     "lint": "phpcs -q",
-    "qa": ["@lint"]
+    "test": "phpunit --configuration phpunit.xml.dist",
+    "qa": ["@lint", "@test"]
   }
 }
